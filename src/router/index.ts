@@ -25,6 +25,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
+    console.log('from:', from.path)
     const githubToken = localStorage.getItem('github_pat_token')
 
     // Allow access to Home page regardless of auth

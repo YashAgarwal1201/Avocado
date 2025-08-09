@@ -33,7 +33,7 @@
 
 <script lang="ts" setup>
 // import {onMounted} from 'vue'
-import {useGithubStore} from "@/pinia/githubProfileStore.ts";
+import {useGithubStore} from "../../pinia/githubProfileStore.ts";
 
 const github = useGithubStore()
 

@@ -14,9 +14,6 @@
 </template>
 
 <script lang="ts" setup>
-import {ref} from "vue";
 import NavBar from "../components/NavBar/NavBar.vue";
 import SideMenu from "../components/NavBar/SideMenu.vue";
-
-const feature = ref();
 </script>

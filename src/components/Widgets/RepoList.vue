@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import {FolderGit, GitFork, Star} from "lucide-vue-next";
 import {Tag} from "primevue";
-import {useGithubStore} from "@/pinia/githubProfileStore.ts";
+import {useGithubStore} from "../../pinia/githubProfileStore.ts";
 
 const github = useGithubStore()
 </script>

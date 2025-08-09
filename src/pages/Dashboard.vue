@@ -5,7 +5,7 @@ import BaseLayout from "../layout/BaseLayout.vue";
 import RepoList from "../components/Widgets/RepoList.vue";
 
 import {onMounted} from 'vue'
-import {useGithubStore} from "@/pinia/githubProfileStore.ts";
+import {useGithubStore} from "../pinia/githubProfileStore.ts";
 
 const github = useGithubStore()
 
