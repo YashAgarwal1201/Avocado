@@ -1,0 +1,17 @@
+{
+  "short_name": "Avocado",
+  "name": "Avocado",
+  "icons": [
+    {
+      "src": "./logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#c4b5fd",
+  "background_color": "#c4b5fd",
+  "prefer-related-application": true
+}
