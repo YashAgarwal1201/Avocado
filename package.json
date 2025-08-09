@@ -9,9 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@types/node": "^22.9.0",
     "@primeuix/themes": "^1.2.3",
     "@tailwindcss/vite": "^4.1.11",
+    "@types/node": "^22.9.0",
     "lucide-vue-next": "^0.537.0",
     "pinia": "^3.0.3",
     "primeicons": "^7.0.0",
@@ -25,6 +25,7 @@
     "@vue/tsconfig": "^0.7.0",
     "typescript": "~5.8.3",
     "vite": "^7.1.0",
+    "vite-plugin-pwa": "^1.0.2",
     "vue-tsc": "^3.0.5"
   }
 }

@@ -6,26 +6,41 @@
           🥑</h1>
         <p class="font-content">Please enter your GitHub Personal Access Token (PAT) to
           continue.</p></div>
-      <div v-if="pat" class="flex-grow-1 flex justify-center items-center">
+      <div v-if="!pat" class="flex-grow-1 flex justify-center items-center">
 
 
-        <div class="flex items-center justify-center gap-x-2">
-          <InputText
+        <div class="flex flex-col items-center justify-center">
+          <div class="flex items-center justify-center gap-x-2">
+            <InputText
 
-              v-model="inputPat"
-              class="border border-stone-300 dark:border-stone-600 !bg-stone-100 dark:!bg-stone-800 rounded px-4 py-2 w-80"
-              placeholder="Enter GitHub PAT"
-              type="password"
+                v-model="inputPat"
+                class="flex-grow-1 flex-shrink-1 border border-stone-300 dark:border-stone-600 !bg-stone-100 dark:!bg-stone-800 rounded px-4 py-2"
+                placeholder="Enter GitHub PAT"
+                type="password"
 
-          />
-          <Button
-              class="px-4 py-2 flex flex-row items-center gap-x-2 rounded-lg !border-none !bg-yellow-600 dark:!bg-yellow-500 hover:!bg-yellow-700 dark:hover:!bg-yellow-400"
-              @click="saveToken"
-          >
-            <span class="pi pi-check"></span>
-            <span>Save Token</span>
-          </Button>
-        </div>
+            />
+            <Button
+                class="flex-shrink-0 px-4 py-2 flex flex-row items-center gap-x-2 rounded-lg !border-none !bg-yellow-600 dark:!bg-yellow-500 hover:!bg-yellow-700 dark:hover:!bg-yellow-400"
+                @click="saveToken"
+            >
+              <span class="pi pi-check"></span>
+              <span>Save Token</span>
+            </Button>
+
+
+          </div>
+          <p class="w-full text-center mt-3">
+            Don’t have a PAT? You can create one, or if you already have one, retrieve it
+            from
+            <a
+                class="underline text-stone-600 dark:text-stone-400 text-base"
+                href="https://github.com/settings/tokens"
+                rel="noreferrer noopener nofollow"
+                target="_blank"
+            >
+              here
+            </a>.
+          </p></div>
       </div>
     </div>
   </BaseLayout>
@@ -46,7 +61,7 @@ onMounted(() => {
   pat.value = localStorage.getItem('github_pat_token')
 
   if (pat.value) {
-    // router.replace('/dashboard') // Immediately navigate if token exists
+    router.replace('/dashboard') // Immediately navigate if token exists
   }
 })
 

@@ -6,6 +6,8 @@ import RepoList from "../components/Widgets/RepoList.vue";
 
 import {onMounted} from 'vue'
 import {useGithubStore} from "../pinia/githubProfileStore.ts";
+import OpenPRs from "../components/Widgets/OpenPRs.vue";
+import NotificationsAlerts from "../components/Widgets/NotificationsAlerts.vue";
 
 const github = useGithubStore()
 
@@ -21,7 +23,7 @@ onMounted(() => {
         <BasicProfile/>
       </div>
       <div
-          class="p-3 sm:p-4 rounded-lg border border-stone-300 dark:border-stone-600 bg-stone-100 dark:bg-stone-800 flex flex-wrap flex-col md:flex-center items-start md:items-center gap-x-3">
+          class="p-3 sm:p-4 rounded-lg border border-stone-300 dark:border-stone-600 bg-stone-100 dark:bg-stone-800 flex flex-wrap flex-col md:flex-row items-start md:items-center gap-x-3">
         <div class="flex  items-center gap-x-2">
           <Building :size="16"/>
           <span class="text-stone-600 dark:text-stone-400">{{ github?.profileData?.viewer?.company ?? "N/A" }}</span>
@@ -45,6 +47,11 @@ onMounted(() => {
         <!--        </div>-->
         <div class="flex-grow-1 h-full flex justify-center items-center">
           <RepoList/>
+        </div>
+
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
+          <OpenPRs/>
+          <NotificationsAlerts/>
         </div>
       </div>
 
