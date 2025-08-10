@@ -4,7 +4,7 @@ import {RouterView} from "vue-router";
 
 <template>
   <div
-      class="w-dvw h-dvh flex justify-center items-center font-content bg-stone-50 dark:bg-stone-900 text-green-700 dark:text-green-300">
+      class="w-screen h-screen flex justify-center items-center font-content bg-stone-50 dark:bg-stone-900 text-green-700 dark:text-green-300">
     <RouterView/>
   </div>
 </template>
