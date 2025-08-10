@@ -11,13 +11,13 @@
 
     <Button
         class="w-auto md:w-full h-full md:h-auto aspect-square flex justify-center items-center !border-none !rounded-2xl !bg-yellow-600 dark:!bg-yellow-500 hover:!bg-yellow-700 dark:hover:!bg-yellow-400"
-    >
+        @click="() => showToast('info', 'Info', 'Coming soon.')">
       <MessageCircle :size="16"/>
     </Button>
 
     <Button
         class="w-auto md:w-full h-full md:h-auto aspect-square flex justify-center items-center !border-none !rounded-2xl !bg-yellow-600 dark:!bg-yellow-500 hover:!bg-yellow-700 dark:hover:!bg-yellow-400 ml-auto md:ml-0 mt-0 md:mt-auto"
-        @click="openSideMenu"
+        @click="() => navbarStore.openSideMenu()"
     >
       <Menu :size="16"/>
     </Button>
@@ -28,10 +28,11 @@
 import {Home, Menu, MessageCircle} from "lucide-vue-next";
 import {Button} from "primevue";
 import {useNavbarStore} from "../../pinia/navbarStore.ts";
+import toastHandler from "../../composables/toastHandler.ts";
 
 const navbarStore = useNavbarStore()
-
-const {openSideMenu} = navbarStore
+const {showToast} = toastHandler()
+// const {openSideMenu} = navbarStore
 </script>
 
 <style lang="css" scoped>

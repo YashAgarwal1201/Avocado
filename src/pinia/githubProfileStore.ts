@@ -1,13 +1,19 @@
 import {defineStore} from 'pinia'
 import {ref} from 'vue'
 import type {GithubProfileData} from "../types/github.ts";
+import toastHandler from "../composables/toastHandler.ts";
+import {GITHUB_GRAPHQL_ENDPOINT, GITHUB_NOTIFICATIONS_API_ENDPOINT} from "../constants/BaseConstants.ts";
 
 export const useGithubStore = defineStore('github', () => {
     const profileData = ref<GithubProfileData | null>(null)
     const loading = ref(false)
+    const loadingNotifications = ref(false)
     const error = ref<string | null>(null)
-
+    const notificationsError = ref<string | null>(null)
+    const notifications = ref<any>([])
     const token = ref<string | null>(localStorage.getItem('github_pat_token'))
+
+    const {showToast} = toastHandler()
 
     function setToken(newToken: string) {
         token.value = newToken
@@ -17,6 +23,7 @@ export const useGithubStore = defineStore('github', () => {
     async function fetchGithubData() {
         if (!token.value) {
             error.value = 'GitHub token not found'
+            showToast("error", "Error", "No github token found.")
             return
         }
 
@@ -73,7 +80,7 @@ export const useGithubStore = defineStore('github', () => {
         }
       `
 
-            const res = await fetch('https://api.github.com/graphql', {
+            const res = await fetch(GITHUB_GRAPHQL_ENDPOINT, {
                 method: 'POST',
                 headers: {
                     Authorization: `Bearer ${token.value}`,
@@ -85,10 +92,12 @@ export const useGithubStore = defineStore('github', () => {
             const json = await res.json()
 
             if (json.errors) {
+                showToast("error", "Error", "Looks like some error happened.")
                 throw new Error(json.errors.map((e: any) => e.message).join(', '))
             }
 
             profileData.value = json.data
+            showToast("success", "Success", "Data fetched successfully.")
         } catch (err: any) {
             error.value = err.message
         } finally {
@@ -96,12 +105,48 @@ export const useGithubStore = defineStore('github', () => {
         }
     }
 
+    async function loadNotifications() {
+        if (!token.value) {
+            error.value = 'GitHub token not found'
+            showToast("error", "Error", "No github token found.")
+            return
+        }
+
+        loadingNotifications.value = true
+        notificationsError.value = null
+
+        try {
+            const res = await fetch(`${GITHUB_NOTIFICATIONS_API_ENDPOINT}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    Accept: "application/vnd.github+json",
+                },
+                cache: "no-cache"
+            })
+            if (!res.ok) {
+                showToast("error", "Failed to load notifications.", "Please check console for more information.")
+                console.error("Failed to load notifications:", res.status, res.statusText)
+                throw new Error(`Notifications fetch failed: ${res.status}`)
+            }
+            notifications.value = await res.json()
+        } catch (err: any) {
+            notificationsError.value = err.message
+            console.error("Failed to load notifications:", err.message)
+        } finally {
+            loadingNotifications.value = false
+        }
+    }
+
     return {
         profileData,
         loading,
+        loadingNotifications,
         error,
+        notificationsError,
         token,
+        notifications,
         setToken,
+        loadNotifications,
         fetchGithubData
     }
 })

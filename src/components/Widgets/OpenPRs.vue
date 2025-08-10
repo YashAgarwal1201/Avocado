@@ -19,7 +19,8 @@ const github = useGithubStore()
           <h4 class="text-base md:text-lg font-heading text-yellow-800 dark:text-yellow-400 line-clamp-1 underline">
             <a :href="pr.url" rel="noreferrer noopener nofollow" target="_blank">{{ pr.title ?? "" }}</a></h4>
         </div>
-        <p class="text-base">{{ pr.repository.name ?? "" }}</p>
+        <a :href="pr.repository.url" class="text-base hover:underline" rel="noreferrer noopener nofollow"
+           target="_blank">{{ pr.repository.name ?? "" }}</a>
         <p class="text-stone-600 dark:text-stone-400 text-base">{{ pr.createdAt }}</p>
       </div>
     </div>
