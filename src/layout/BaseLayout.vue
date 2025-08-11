@@ -11,6 +11,7 @@
 
   </div>
   <SideMenu/>
+  <FeedbackMenu/>
   <ConfirmDialog></ConfirmDialog>
 </template>
 
@@ -19,4 +20,5 @@ import {Toast} from "primevue"
 import ConfirmDialog from "primevue/confirmdialog"
 import NavBar from "../components/NavBar/NavBar.vue";
 import SideMenu from "../components/NavBar/SideMenu.vue";
+import FeedbackMenu from "../components/NavBar/FeedbackMenu.vue";
 </script>
