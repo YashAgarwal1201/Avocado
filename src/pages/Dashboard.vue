@@ -18,7 +18,7 @@ onMounted(() => {
 
 <template>
   <BaseLayout>
-    <div class="w-full h-full p-4 sm:p-6 xl:p-8 flex flex-col overflow-y-auto">
+    <div class="w-full h-full p-4 sm:p-6 xl:p-8 flex flex-col gap-y-4 overflow-y-auto">
       <div class="w-full h-1/2 flex justify-center items-center">
         <BasicProfile/>
       </div>
@@ -39,12 +39,7 @@ onMounted(() => {
           <span class="text-stone-600 dark:text-stone-400">{{ github.profileData?.viewer?.websiteUrl ?? "N/A" }}</span>
         </div>
       </div>
-      <div class="w-full flex flex-col gap-y-3 mt-4">
-        <!--        <div class="flex-shrink-0 flex flex-row items-center gap-x-2 overflow-x-auto">-->
-        <!--          <Button v-for="i in 5" :key="i"-->
-        <!--                  class="flex-shrink-0 px-4 py-2 flex items-center justify-between gap-x-2 rounded-lg">{{ i }}-->
-        <!--          </Button>-->
-        <!--        </div>-->
+      <div class="w-full flex flex-col gap-y-4">
         <div class="flex-grow-1 h-full flex justify-center items-center">
           <RepoList/>
         </div>

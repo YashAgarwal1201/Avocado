@@ -9,3 +9,31 @@
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+/*TODO: Need to write hover properties in better way*/
+/*@layer components {*/
+/*    @media (hover: hover) and (pointer: fine) {*/
+/*        .p-button:hover,*/
+/*        a:hover,*/
+/*        .feedback-form .form-section:hover,*/
+/*        .p-accordion .p-accordion-tab .p-accordion-header:hover,*/
+/*        .custom-panel-header:hover {*/
+/*            color: var(--color-lime-500, #1e293b) !important;*/
+/*            background-color: var(--color-lime-300) !important;*/
+/*            border-color: var(--color-lime-300, #fda4af) !important;*/
+/*        }*/
+/*    }*/
+/*}*/
+
+/*@layer components {*/
+/*    @media (hover: hover) and (pointer: fine) {*/
+
+/*        .feedback-form .form-section:hover,*/
+/*        .p-accordion .p-accordion-tab .p-accordion-header:hover,*/
+/*        .custom-panel-header:hover {*/
+/*            color: var(--color-stone-50, #1e293b) !important;*/
+/*            background-color: var(--color-stone-300) !important;*/
+/*            border-color: var(--color-stone-300, #fda4af) !important;*/
+/*        }*/
+/*    }*/
+/*}*/
