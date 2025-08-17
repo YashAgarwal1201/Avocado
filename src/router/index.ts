@@ -1,6 +1,7 @@
 import {createRouter, createWebHistory} from 'vue-router'
 import HomePage from '../pages/HomePage.vue'
 import Dashboard from '../pages/Dashboard.vue'
+import CustomiseApp from "../pages/CustomiseApp.vue";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -16,6 +17,12 @@ const router = createRouter({
             name: 'dashboard',
             component: Dashboard,
             meta: {title: 'View your GitHub dashboard'},
+        },
+        {
+            path: '/customise-app',
+            name: 'customise-app',
+            component: CustomiseApp,
+            meta: {title: 'Customise your GitHub dashboard'},
         },
         {
             path: '/:pathMatch(.*)*',

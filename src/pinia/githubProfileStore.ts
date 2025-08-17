@@ -46,7 +46,7 @@ export const useGithubStore = defineStore('github', () => {
             createdAt
             followers { totalCount }
             following { totalCount }
-            repositories(first: 10, orderBy: {field: UPDATED_AT, direction: DESC}) {
+            repositories(first: 50, orderBy: {field: UPDATED_AT, direction: DESC}) {
               totalCount
               nodes {
                 id
@@ -118,7 +118,7 @@ export const useGithubStore = defineStore('github', () => {
         try {
             const res = await fetch(`${GITHUB_NOTIFICATIONS_API_ENDPOINT}`, {
                 headers: {
-                    Authorization: `Bearer ${token}`,
+                    Authorization: `Bearer ${token.value}`,
                     Accept: "application/vnd.github+json",
                 },
                 cache: "no-cache"

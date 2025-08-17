@@ -66,7 +66,7 @@ function confirmClearAppData() {
     <Drawer
         v-model:visible="navbarStore.isSideMenuOpen"
         :dismissable="true"
-        class="!w-full md:!w-[768px] rounded-none md:!rounded-l-xl !bg-stone-100 dark:!bg-stone-800 font-content !text-green-700 dark:!text-green-300"
+        class="!w-full md:!w-[768px] rounded-none md:!rounded-l-xl bg-stone-50 dark:bg-stone-900 font-content !text-green-700 dark:!text-green-300"
         position="right"
         v-on:hide="() => navbarStore.closeSideMenu()"
     >
@@ -81,7 +81,7 @@ function confirmClearAppData() {
       <div class="w-full">
         <div class="flex flex-col">
           <div
-              class="w-full flex flex-col rounded-xl bg-white dark:bg-stone-700 p-4"
+              class="w-full flex flex-col rounded-xl !bg-stone-100 dark:!bg-stone-800 p-4"
           >
             <RouterLink :class="buttonStyles" to="/">
               <Home :size="16" class="text-yellow-600 dark:text-yellow-500"/>
@@ -90,8 +90,7 @@ function confirmClearAppData() {
 
             <div class="mx-2 my-1 p-0 max-w-full h-[1.5px] bg-stone-300 dark:bg-stone-600"></div>
 
-            <RouterLink :class="buttonStyles" to=""
-                        @click.prevent="() => showToast('info', 'Info', 'Coming soon')">
+            <RouterLink :class="buttonStyles" to="/customise-app">
               <Wrench :size="16" class="text-yellow-600 dark:text-yellow-500"/>
               <span>Customise App</span>
             </RouterLink>

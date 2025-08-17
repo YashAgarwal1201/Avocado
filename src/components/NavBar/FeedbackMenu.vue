@@ -4,7 +4,7 @@
         v-model:visible="navbarStore.isFeedbackMenuOpen"
         :dismissable="true"
         :modal="true"
-        class="!w-full !max-w-[768px] h-full rounded-none md:rounded-l-3xl"
+        class="!w-full md:!w-[768px] rounded-none md:!rounded-l-xl bg-stone-50 dark:bg-stone-900 font-content !text-green-700 dark:!text-green-300"
         position="right"
         v-on:hide="() => navbarStore.closeFeedbackMenu()"
 
@@ -18,7 +18,7 @@
       </template>
       <div class="flex flex-col h-full">
 
-        <div class="w-full rounded-3xl bg-white dark:bg-stone-700 p-4">
+        <div class="w-full rounded-xl !bg-stone-100 dark:!bg-stone-800 p-4">
           <Form
               :validation-schema="schema"
               class="flex flex-col"
@@ -32,8 +32,9 @@
 
               <Field
                   id="name"
-                  class="w-full p-inputtext border !border-stone-300 dark:!border-stone-600 !rounded-lg"
+                  class="w-full p-inputtext !bg-transparent border !border-stone-300 dark:!border-stone-600 !rounded-lg"
                   name="name"
+                  placeholder="John Doe"
                   type="text"
               />
             </div>
@@ -48,8 +49,9 @@
 
               <Field
                   id="email"
-                  class="w-full p-inputtext  border !border-stone-300 dark:!border-stone-600 !rounded-lg"
+                  class="w-full p-inputtext !bg-transparent  border !border-stone-300 dark:!border-stone-600 !rounded-lg"
                   name="email"
+                  placeholder="john@doe.com"
                   type="email"
               />
             </div>
@@ -70,8 +72,9 @@
               <Field
                   id="message"
                   as="textarea"
-                  class="w-full p-inputtextarea  border !border-stone-300 dark:!border-stone-600 !rounded-lg resize-none"
+                  class="w-full p-inputtext !bg-transparent  border !border-stone-300 dark:!border-stone-600 !rounded-lg resize-none"
                   name="message"
+                  placeholder="It's a brand new day, and the sun is high. All the birds are singing, 'You are gonna die...'"
                   rows="5"
               />
             </div>
@@ -89,10 +92,11 @@
 
             <div class="mx-2 my-1 p-0 max-w-full h-[1.5px] bg-stone-300 dark:bg-stone-600"></div>
 
-            <div class="flex items-center gap-x-5">
+            <div class="flex items-center gap-x-5 p-2">
               <Button
-                  :outlined="true"
-                  class="border !border-lime-500 dark:!border-lime-400 hover:!bg-lime-600 dark:hover:!bg-lime-500 !text-lime-500 dark:!text-lime-500 hover:!text-black !rounded-lg px-4 py-2 flex-grow-1 flex items-center gap-x-2 text-sm sm:text-base lg:text-lg"
+                  class=" !rounded-lg px-4 py-2 flex-grow-1 flex items-center gap-x-2 text-sm sm:text-base lg:text-lg"
+                  outlined
+                  severity="secondary"
                   type="reset"
                   @click="closeFeedbackDialogHandle"
               >

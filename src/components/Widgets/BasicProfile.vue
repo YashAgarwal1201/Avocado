@@ -20,7 +20,7 @@
       <div class="flex items-center gap-x-2 text-stone-600 dark:text-stone-400">
         <div class="flex items-center gap-x-2 text-stone-600 dark:text-stone-400">
           <span>Followers: </span><span>{{ github.profileData.viewer.followers?.totalCount ?? 0 }}</span></div>
-        .
+        <Dot :size="16"/>
         <div class="flex items-center gap-x-2">
           <span>Following: </span><span>{{ github.profileData.viewer.following?.totalCount ?? 0 }}</span></div>
       </div>
@@ -33,6 +33,7 @@
 
 <script lang="ts" setup>
 // import {onMounted} from 'vue'
+import {Dot} from "lucide-vue-next"
 import {useGithubStore} from "../../pinia/githubProfileStore.ts";
 
 const github = useGithubStore()
