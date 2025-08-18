@@ -6,7 +6,5 @@ export const GITHUB_GRAPHQL_ENDPOINT = "https://api.github.com/graphql"
 
 export const GITHUB_NOTIFICATIONS_API_ENDPOINT = "https://api.github.com/notifications"
 
-export const DEVELOPER_PROFILE = "https://yashagarwal1201.github.io/"
-
 
 export const BASE_API_LINK = "https://project-cranberry.vercel.app";
