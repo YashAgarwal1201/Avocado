@@ -3,7 +3,6 @@ import {ref} from "vue";
 import {FolderX, Home, Keyboard, MessageCircle, Palette, UserCircle, Wrench} from "lucide-vue-next"
 import {Button, Drawer, Panel, Select} from "primevue";
 import {useNavbarStore} from "../../pinia/navbarStore.ts";
-import {DEVELOPER_PROFILE} from "../../constants/BaseConstants.ts";
 import {useConfirm} from "primevue/useconfirm";
 import toastHandler from "../../composables/toastHandler.ts";
 import router from "../../router";
@@ -19,6 +18,7 @@ const isKeyboardPanelCollapsed = ref(true);
 
 const buttonStyles =
     "!px-2 !py-4 !bg-transparent !!text-green-700 dark:!text-green-300 flex items-center !gap-x-3 !rounded-xl *:text-lg font-normal font-content";
+const developerProfile = import.meta.env.VITE_DEVELOPER_PROFILE || "";
 
 // Toggle functions
 const togglePanel = () => {
@@ -212,7 +212,7 @@ function confirmClearAppData() {
             <div class="mx-2 my-1 p-0 max-w-full h-[1.5px] bg-stone-300 dark:bg-stone-600"></div>
             <a
                 :class="buttonStyles"
-                :href="DEVELOPER_PROFILE"
+                :href="developerProfile"
                 class="!text-green-700 dark:!text-green-300 !border-none !flex !items-center !justify-start shadow-none"
                 rel="noopener noreferrer nofollow"
                 target="_blank"

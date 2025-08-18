@@ -9,7 +9,6 @@ onMounted(async () => {
   await github.loadNotifications();
 })
 
-console.log("notification alerts loaded", github.notifications)
 </script>
 
 <template>
