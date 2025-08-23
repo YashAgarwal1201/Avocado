@@ -9,12 +9,13 @@ export const useWidgetStore = defineStore('widget', () => {
         {key: 'profile', label: 'Basic Profile'},
         {key: 'repos', label: 'Repo List'},
         {key: 'prs', label: 'Open PRs'},
-        {key: 'notifications', label: 'Notifications'}
+        {key: 'notifications', label: 'Notifications'},
+        {key: 'contributions', label: 'Contributions'},
     ];
 
     // Current selected widgets (from localStorage)
     const selectedWidgets = ref<string[]>(
-        JSON.parse(localStorage.getItem(LS_KEY) || '["profile","repos","prs","notifications"]')
+        JSON.parse(localStorage.getItem(LS_KEY) || '["profile","repos","prs","notifications", "contributions"]')
     );
 
     // Temporary working copy for editing
