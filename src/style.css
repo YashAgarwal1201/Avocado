@@ -6,6 +6,12 @@
 @theme {
     --font-heading: "David Libre", serif;
     --font-content: "Chivo", sans-serif;
+
+
+}
+
+@reference {
+    
 }
 
 @custom-variant dark (&:where(.dark, .dark *));

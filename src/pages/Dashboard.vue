@@ -14,6 +14,7 @@ import {useWidgetStore} from "../pinia/widgetsStore.ts";
 import Button from 'primevue/button';
 import Skeleton from 'primevue/skeleton';
 import Message from 'primevue/message';
+import ContributionCharts from "../components/Widgets/ContributionCharts.vue";
 
 const github = useGithubStore();
 const widgets = useWidgetStore();
@@ -23,6 +24,7 @@ const hasProfile = computed(() => widgets.selectedWidgets.includes('profile'));
 const hasRepos = computed(() => widgets.selectedWidgets.includes('repos'));
 const hasPRs = computed(() => widgets.selectedWidgets.includes('prs'));
 const hasNotifications = computed(() => widgets.selectedWidgets.includes('notifications'));
+const hasContributions = computed(() => widgets.selectedWidgets.includes('contributions'));
 
 // Grid layout logic
 const gridCols = computed(() => {
@@ -141,6 +143,10 @@ onMounted(() => {
               </div>
             </div>
           </div>
+        </section>
+
+        <section v-if="hasContributions">
+          <ContributionCharts/>
         </section>
 
         <!-- Widgets Grid -->

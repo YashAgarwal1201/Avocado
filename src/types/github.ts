@@ -20,6 +20,12 @@ export interface GithubProfileData {
             totalCount: number
             nodes: GithubPullRequest[]
         }
+        contributionsCollection: {
+            contributionCalendar: {
+                totalContributions: number
+                weeks: ContributionWeek[]
+            }
+        }
         notifications: GithubNotification[] // We'll fake this because notifications are REST-only
     }
 }
@@ -55,4 +61,13 @@ export interface GithubNotification {
     title: string
     url: string
     repositoryName: string
+}
+
+export interface ContributionWeek {
+    contributionDays: ContributionDay[]
+}
+
+export interface ContributionDay {
+    date: string
+    contributionCount: number
 }

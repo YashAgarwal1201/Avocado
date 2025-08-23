@@ -1,3 +1,4 @@
+<!--TODO: lan lan -->
 <template>
   <div>
     <Drawer
@@ -126,7 +127,6 @@ import {ErrorMessage, Field, Form, useForm} from "vee-validate";
 import * as yup from "yup";
 import {ref} from "vue";
 import {useNavbarStore} from "../../pinia/navbarStore.ts";
-import {BASE_API_LINK} from "../../constants/BaseConstants.ts";
 import toastHandler from "../../composables/toastHandler.ts";
 
 const navbarStore = useNavbarStore();
@@ -177,7 +177,7 @@ const onSubmit = async (values: any) => {
   try {
     loading.value = true;
     const response = await fetch(
-        `${BASE_API_LINK}/api-services/avocado/contact-form-data`,
+        `${import.meta.env.VITE_BASE_API_LINK ?? ""}/api-services/avocado/feedback-form-data`,
         {
           method: "POST",
           headers: {"Content-Type": "application/json"},
