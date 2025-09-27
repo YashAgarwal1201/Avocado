@@ -21,4 +21,14 @@ import ConfirmDialog from "primevue/confirmdialog"
 import NavBar from "../components/NavBar/NavBar.vue";
 import SideMenu from "../components/NavBar/SideMenu.vue";
 import FeedbackMenu from "../components/NavBar/FeedbackMenu.vue";
+import {onMounted} from "vue";
+import {useGithubStore} from "../pinia/githubProfileStore.ts";
+
+const githubStore = useGithubStore();
+
+onMounted(() => {
+  if (!githubStore.profileData) {
+    githubStore.fetchGithubData();
+  }
+});
 </script>
