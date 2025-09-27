@@ -2,6 +2,8 @@ import {createRouter, createWebHistory} from 'vue-router'
 import HomePage from '../pages/HomePage.vue'
 import Dashboard from '../pages/Dashboard.vue'
 import CustomiseApp from "../pages/CustomiseApp.vue";
+import RepoDetails from "../pages/RepoDetails.vue";
+import ReposListPage from "../pages/ReposListPage.vue";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -16,13 +18,25 @@ const router = createRouter({
             path: '/dashboard',
             name: 'dashboard',
             component: Dashboard,
-            meta: {title: 'View your GitHub dashboard'},
+            meta: {title: 'View your github dashboard'},
+        },
+        {
+            path: '/dashboard/repos-list',
+            name: 'Repos List',
+            component: ReposListPage,
+            meta: {title: 'View your github repos list '},
+        },
+        {
+            path: '/dashboard/repos-list/:repoId',
+            name: 'Repo Details',
+            component: RepoDetails,
+            meta: {title: 'View your github repo details'},
         },
         {
             path: '/customise-app',
             name: 'customise-app',
             component: CustomiseApp,
-            meta: {title: 'Customise your GitHub dashboard'},
+            meta: {title: 'Customise your github dashboard'},
         },
         {
             path: '/:pathMatch(.*)*',

@@ -6,7 +6,7 @@ import RepoList from "../components/Widgets/RepoList.vue";
 import OpenPRs from "../components/Widgets/OpenPRs.vue";
 import NotificationsAlerts from "../components/Widgets/NotificationsAlerts.vue";
 
-import {computed, onMounted} from 'vue';
+import {computed} from 'vue';
 import {useGithubStore} from "../pinia/githubProfileStore.ts";
 import {useWidgetStore} from "../pinia/widgetsStore.ts";
 
@@ -38,9 +38,9 @@ const hasAnyWidgets = computed(() =>
     hasProfile.value || hasRepos.value || hasPRs.value || hasNotifications.value
 );
 
-onMounted(() => {
-  github.fetchGithubData();
-});
+// onMounted(() => {
+//   github.fetchGithubData();
+// });
 </script>
 
 <template>

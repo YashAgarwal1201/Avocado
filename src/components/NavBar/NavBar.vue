@@ -10,7 +10,7 @@
     </RouterLink>
 
     <Button
-        class="w-auto md:w-full h-full md:h-auto aspect-square flex justify-center items-center !border-none !rounded-2xl !bg-yellow-600 dark:!bg-yellow-500 hover:!bg-yellow-700 dark:hover:!bg-yellow-400"
+        class="w-auto md:w-full h-full md:h-auto aspect-square !hidden sm:!flex justify-center items-center !border-none !rounded-2xl !bg-yellow-600 dark:!bg-yellow-500 hover:!bg-yellow-700 dark:hover:!bg-yellow-400"
         @click="() => navbarStore.openFeedbackMenu()">
       <MessageCircle :size="16"/>
     </Button>

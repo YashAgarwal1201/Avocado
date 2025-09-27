@@ -41,7 +41,7 @@
 </template>
 
 <script lang="ts" setup>
-import {computed, onMounted} from 'vue'
+import {computed} from 'vue'
 import {CalendarHeatmap} from 'vue3-calendar-heatmap'
 import {useGithubStore} from "../../pinia/githubProfileStore.ts";
 
@@ -86,11 +86,11 @@ const endDate = computed(() => {
   return new Date().toISOString().split('T')[0]
 })
 
-onMounted(() => {
-  if (!profileData.value) {
-    githubStore.fetchGithubData()
-  }
-})
+// onMounted(() => {
+//   if (!profileData.value) {
+//     githubStore.fetchGithubData()
+//   }
+// })
 </script>
 
 <style scoped>
