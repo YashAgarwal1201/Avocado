@@ -5,7 +5,7 @@
         v-model:visible="navbarStore.isFeedbackMenuOpen"
         :dismissable="true"
         :modal="true"
-        class="!w-full md:!w-[768px] rounded-none md:!rounded-l-xl bg-stone-50 dark:bg-stone-900 font-content !text-green-700 dark:!text-green-300"
+        class="!w-full md:!w-[768px] rounded-none md:!rounded-l-xl !bg-stone-50 dark:!bg-stone-900 font-content !text-green-700 dark:!text-green-300"
         position="right"
         v-on:hide="() => navbarStore.closeFeedbackMenu()"
 
@@ -19,7 +19,8 @@
       </template>
       <div class="flex flex-col h-full">
 
-        <div class="w-full rounded-xl !bg-stone-100 dark:!bg-stone-800 p-4">
+        <div
+            class="w-full rounded-xl !bg-stone-100 dark:!bg-stone-800 border border-stone-300 dark:border-stone-600 p-4">
           <Form
               :validation-schema="schema"
               class="flex flex-col"
@@ -206,10 +207,10 @@ const onSubmit = async (values: any) => {
 
 <style scoped>
 /* PrimeVue input style tweaks if needed */
-.p-inputtext,
+/* .p-inputtext,
 .p-inputtextarea {
   border: 1px solid #d1d5db;
   border-radius: 0.375rem;
   padding: 0.5rem;
-}
+} */
 </style>

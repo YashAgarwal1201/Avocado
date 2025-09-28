@@ -23,12 +23,20 @@ import SideMenu from "../components/NavBar/SideMenu.vue";
 import FeedbackMenu from "../components/NavBar/FeedbackMenu.vue";
 import {onMounted} from "vue";
 import {useGithubStore} from "../pinia/githubProfileStore.ts";
+import toastHandler from "../composables/toastHandler.ts";
 
 const githubStore = useGithubStore();
+const {showToast} = toastHandler()
 
 onMounted(() => {
-  if (!githubStore.profileData) {
-    githubStore.fetchGithubData();
+  if (githubStore.token) {
+    //
+
+    if (!githubStore.profileData) {
+      githubStore.fetchGithubData();
+    }
+  } else {
+    showToast("error", "Error", "No github token found.")
   }
 });
 </script>

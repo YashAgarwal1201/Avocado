@@ -1,7 +1,7 @@
 <template>
   <div v-if="github.loading">Loading GitHub Data...</div>
   <div v-else-if="github.error" class="text-red-500">{{ github.error }}</div>
-  <div v-else-if="github.profileData" class="w-full h-full flex flex-col sm:flex-row items-center gap-x-4">
+  <div v-else-if="github.profileData" class="w-full h-full flex flex-col sm:flex-row items-center gap-4">
     <div class="max-w-3xs aspect-square border border-stone-300 dark:border-stone-600 rounded-xl overflow-hidden">
       <img :src="github.profileData.viewer.avatarUrl" alt="Avatar" class="w-full h-full object-cover"/>
     </div>
@@ -15,7 +15,7 @@
          rel="noreferrer noopener nofollow" target="_blank">{{
           github.profileData.viewer.login ?? ""
         }}</a>
-      <p class="mt-4 md:mt-3 line-clamp-2">{{ github.profileData.viewer.bio ?? "No bio available" }}</p>
+      <p class="mt-4 md:mt-3 line-clamp-3">{{ github.profileData.viewer.bio ?? "No bio available" }}</p>
 
       <div class="flex items-center gap-x-2 text-stone-600 dark:text-stone-400">
         <div class="flex items-center gap-x-2 text-stone-600 dark:text-stone-400">
