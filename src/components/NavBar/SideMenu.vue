@@ -66,7 +66,7 @@ function confirmClearAppData() {
     <Drawer
         v-model:visible="navbarStore.isSideMenuOpen"
         :dismissable="true"
-        class="!w-full md:!w-[768px] rounded-none md:!rounded-l-xl bg-stone-50 dark:bg-stone-900 font-content !text-green-700 dark:!text-green-300"
+        class="!w-full md:!w-[768px] rounded-none md:!rounded-l-xl !bg-stone-50 dark:!bg-stone-900 font-content !text-green-700 dark:!text-green-300"
         position="right"
         v-on:hide="() => navbarStore.closeSideMenu()"
     >
@@ -81,7 +81,7 @@ function confirmClearAppData() {
       <div class="w-full">
         <div class="flex flex-col">
           <div
-              class="w-full flex flex-col rounded-xl !bg-stone-100 dark:!bg-stone-800 p-4"
+              class="w-full flex flex-col rounded-xl !bg-stone-100 dark:!bg-stone-800 border border-stone-300 dark:border-stone-600 p-4"
           >
             <RouterLink :class="buttonStyles" to="/">
               <Home :size="16" class="text-yellow-600 dark:text-yellow-500"/>
@@ -150,7 +150,7 @@ function confirmClearAppData() {
                   { label: 'Dark', value: 'dark' },
                   { label: 'Light', value: 'light' },
                 ]"
-                  class="ml-auto w-auto !text-sm !rounded-lg !bg-stone-50 dark:!bg-stone-900"
+                  class="ml-auto *:!text-lime-500 dark:*:!text-lime-400 w-auto !text-sm !rounded-lg !bg-stone-50 dark:!bg-stone-900"
                   optionLabel="label"
                   optionValue="value"
                   @update:modelValue="handleThemeChange"

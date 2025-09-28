@@ -45,7 +45,7 @@ const hasAnyWidgets = computed(() =>
 
 <template>
   <BaseLayout>
-    <div class="w-full h-full p-4 sm:p-6 xl:p-8 flex flex-col gap-y-6 overflow-y-auto">
+    <div class="w-full h-full p-4 sm:p-6 xl:p-8 flex flex-col gap-y-6 overflow-y-auto rounded-lg">
 
       <!-- Header Section -->
       <!--      <div class="flex justify-between items-center">-->
@@ -174,15 +174,16 @@ const hasAnyWidgets = computed(() =>
       </div>
 
       <!-- Quick Actions (Mobile) -->
-      <div class="sm:hidden fixed bottom-4 right-4">
-        <router-link to="/settings">
+      <div class="w-full flex justify-end">
+        <router-link to="/customise-app">
           <Button
-              class="shadow-lg"
-              icon="pi pi-cog"
-              rounded
+              class="!rounded-lg"
+
               severity="secondary"
-              size="large"
-          />
+              size="small"
+          >
+            <Settings :size="16"/>
+            <span>Customise App</span></Button>
         </router-link>
       </div>
     </div>
