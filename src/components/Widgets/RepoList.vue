@@ -54,7 +54,8 @@ function scrollRepos(direction: "left" | "right") {
       </div>
     </div>
 
-    <div ref="reposContainer" class="w-full flex flex-row flex-nowrap gap-3 overflow-y-auto rounded-lg">
+    <div ref="reposContainer"
+         class="w-full flex flex-row flex-nowrap gap-3 overflow-y-auto rounded-lg snap-x snap-mandatory">
       <RepoCard v-for="repository in github?.profileData?.viewer?.repositories?.nodes" :repository="repository"/>
     </div>
   </div>
