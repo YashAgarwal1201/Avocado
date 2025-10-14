@@ -20,7 +20,7 @@ onMounted(async () => {
         class="text-xl sm:text-2xl font-heading text-green-800 dark:text-green-400  flex-shrink-0 flex items-center gap-x-2"> <span
         class="text-lime-500 dark:text-lime-400">{{
         github.notifications?.length
-      }}</span> Notifications</h2>  <a
+      }}</span> Alerts</h2>  <a
         :href="github.profileData.viewer.url"
         class="p-button h-8 !border-0 !rounded-lg !bg-lime-500 dark:!bg-lime-400 hover:!bg-lime-600 dark:hover:!bg-lime-500 !text-sm"
         rel="noopener noreferrer nofollow"

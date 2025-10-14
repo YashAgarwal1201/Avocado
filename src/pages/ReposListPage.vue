@@ -120,18 +120,6 @@ const filteredRepos = computed(() => {
               placeholder="Sort by"
           /></div>
 
-        <!--        <Select-->
-        <!--            :modelValue="theme"-->
-        <!--            :options="[-->
-        <!--                  { label: 'System', value: 'system' },-->
-        <!--                  { label: 'Dark', value: 'dark' },-->
-        <!--                  { label: 'Light', value: 'light' },-->
-        <!--                ]"-->
-        <!--            class="ml-auto *:!text-lime-500 dark:*:!text-lime-400 w-auto !text-sm !rounded-lg !bg-stone-50 dark:!bg-stone-900"-->
-        <!--            optionLabel="label"-->
-        <!--            optionValue="value"-->
-        <!--            @update:modelValue="handleThemeChange"-->
-        <!--        />-->
       </div>
 
       <!-- Repositories grid -->

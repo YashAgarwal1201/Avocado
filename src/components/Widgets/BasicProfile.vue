@@ -2,7 +2,8 @@
   <div v-if="github.loading">Loading GitHub Data...</div>
   <div v-else-if="github.error" class="text-red-500">{{ github.error }}</div>
   <div v-else-if="github.profileData" class="w-full h-full flex flex-col sm:flex-row items-center gap-4">
-    <div class="max-w-3xs aspect-square border border-stone-300 dark:border-stone-600 rounded-xl overflow-hidden">
+    <div
+        class="w-full max-w-3xs aspect-square border border-stone-300 dark:border-stone-600 rounded-xl overflow-hidden">
       <img :src="github.profileData.viewer.avatarUrl" alt="Avatar" class="w-full h-full object-cover"/>
     </div>
 
