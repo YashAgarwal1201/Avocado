@@ -15,16 +15,24 @@ const {repository} = props;
 <template>
   <div
       class="w-80 max-w-[90%] aspect-video flex-shrink-0 flex flex-col justify-between border border-stone-300
-    dark:border-stone-600 rounded-lg p-3 sm:p-4">
-    <a :href="repository.url" class="flex items-center gap-x-2" rel="noreferrer noopener nofollow"
-       target="_blank">
+    dark:border-stone-600 rounded-lg p-3 sm:p-4 snap-start snap-always">
+    <!--    <a :href="repository.url" class="flex items-center gap-x-2" rel="noreferrer noopener nofollow"-->
+    <!--       target="_blank">-->
+
+    <!--      <FolderGit :size="16" class="flex-shrink-0"/>-->
+    <!--      <h4 class="text-lg sm:text-xl font-heading underline line-clamp-1  text-green-800 dark:text-green-400">-->
+    <!--        {{ repository.name }}</h4>-->
+
+
+    <!--    </a>-->
+    <RouterLink :to="'/dashboard/repos-list/' +  repository.name" class="flex items-center gap-x-2">
 
       <FolderGit :size="16" class="flex-shrink-0"/>
       <h4 class="text-lg sm:text-xl font-heading underline line-clamp-1  text-green-800 dark:text-green-400">
         {{ repository.name }}</h4>
 
 
-    </a>
+    </RouterLink>
     <p class="line-clamp-2">{{ repository.description ?? "No description available" }}</p>
 
     <div class="flex items-center gap-x-3 text-sm">

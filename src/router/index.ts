@@ -28,7 +28,7 @@ const router = createRouter({
             meta: {title: 'View your github repos list '},
         },
         {
-            path: '/dashboard/repos-list/:repoId',
+            path: '/dashboard/repos-list/:repoName',
             name: 'Repo Details',
             component: RepoDetails,
             meta: {title: 'View your github repo details'},
