@@ -28,7 +28,9 @@
     "@vue/tsconfig": "^0.7.0",
     "typescript": "~5.8.3",
     "vite": "^7.1.0",
-    "vite-plugin-pwa": "^1.2.0",
     "vue-tsc": "^3.0.5"
+  },
+  "volta": {
+    "node": "24.15.0"
   }
 }
