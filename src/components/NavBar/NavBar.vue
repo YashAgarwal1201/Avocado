@@ -90,7 +90,7 @@
 </template>
 
 <script lang="ts" setup>
-import { Home, Menu, MessageCircle, Users } from "lucide-vue-next";
+import { Home, Menu, MessageCircle } from "lucide-vue-next";
 import { useNavbarStore } from "../../pinia/navbarStore.ts";
 
 const navbarStore = useNavbarStore();
